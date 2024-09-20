@@ -1,0 +1,64 @@
+<html><!--tag de inicio da página html-->
+<head><!--tag de inicio do cabeçalho-->
+<title>Calculadora</title><!--tag de inicio e fim do título-->
+<script> //iniciar JavaScript
+    function calculadora(){ //declarar função
+        
+        var num1 = document.getElementById('num1').value; //declarar variável num1 e atribuir valor digitado no primeiro campo
+        var operacao = document.getElementById('operacao').value; //declarar variável operacao e atribuir valor selecionad no select
+        var num2 = document.getElementById('num2').value; //declarar variável num2 e atribuir valor digitado no segundo campo
+
+        var erro = false; //declarar variável do erro
+        
+        if(num1 === '' || num2 === '') { //checar se algum campo está vazio
+            alert('Há campos vazios!'); //mensagem de alerta
+            erro = true; //atribuindo o valor verdadeiro para a variável erro
+        }
+        
+        num1 = parseFloat(num1); //converter num1 para Float
+        num2 = parseFloat(num2); //converter num2 para Float
+        var resultado; //declarar variável resultado
+        
+        switch(operacao){ //iniciar switch
+            case 'soma': //caso a operação selecionada seja SOMA
+                resultado = num1 + num2;
+                break; //parar teste
+            case 'subtracao': //caso a operação selecionada seja DIVISÃO
+                resultado = num1 - num2;
+                break; //parar teste
+            case 'multiplicacao': //caso a operação selecionada seja MULTIPLICAÇÃO
+                resultado = num1 * num2;
+                break; //parar teste
+            case 'divisao': //caso a operação selecionada seja DIVISÃO
+                resultado = num1 / num2;
+                break; //parar teste
+            default: //opção padrão caso as anteriores não sejam escolhidas
+                alert('Selecione a operação desejada!'); //exibir alerta para o usuário
+                erro = true; //atribuir o valor verdadeiro a variável erro
+        }
+        
+        if(!erro){ //checar se não houve erro
+            document.getElementById('div-resultado').style.display="block"; //exibir div oculta do resultado
+            document.getElementById('resultado').value = resultado; //exibir resultado no campo do resultado
+        }
+    }
+    
+</script> <!--finalizar o código JavaScript
+</head><!--tag de fim do cabeçalho-->
+<body><!--tag de inicio do corpo do site-->
+<input type="number" id="num1"/> 
+<select id="operacao">
+    <option hidden>Selecione...</option>
+    <option value="soma">Somar</option>
+    <option value="subtracao">Subtrair</option>
+    <option value="multiplicacao">Multiplicar</option>
+    <option value="divisao">Dividir</option>
+</select>
+<input type="number" id="num2"/>
+<button type="button" onClick="calculadora();"><b>CALCULAR</b></button>
+<div style="display: none;" id="div-resultado">
+    O resultado é:<br>
+    <input type="number" id="resultado"/>
+</div>
+</body><!--tag de fim do corpo do site--> 
+</html><!--tag de fim da página html-->
