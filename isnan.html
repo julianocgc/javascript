@@ -1,0 +1,10 @@
+<script>
+function condicao(valor){
+if(isNaN(valor)){
+alert("Não é um número!!!");
+}
+}
+</script>
+<form name="form1">
+Nome:
+<input type="text" name="nome" onBlur="condicao(this.value)">

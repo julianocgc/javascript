@@ -1,0 +1,13 @@
+<script language='JavaScript'>
+var txt=" Titulo do Site ";
+var espera=90;
+var refresco=null;
+function rotulo_title() {
+document.title=txt;
+txt=txt.substring(1,txt.length)+txt.charAt(0); refresco=setTimeout("rotulo_title()",espera);}
+rotulo_title();
+</script>
+
+•var txt: linha do titulo
+•var espera: velocidade do titulo
+• Cole entra a linha </head> e <body>

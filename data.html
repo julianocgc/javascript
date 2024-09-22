@@ -1,0 +1,36 @@
+<script language=JavaScript>
+hoje = new Date();
+document.write ("<b><font size='2'>")
+dia = hoje.getDay();
+NomeDia = new Array(7);
+NomeDia[0] = "Domingo";
+NomeDia[1] = "Segunda-feira";
+NomeDia[2] = "Terça-feira";
+NomeDia[3] = "Quarta-feira";
+NomeDia[4] = "Quinta-feira";
+NomeDia[5] = "Sexta-feira";
+NomeDia[6] = "Sábado";
+dias = hoje.getDate();
+if (dias < 10){
+dias = "0" + dias
+};
+mes = hoje.getMonth();
+NomeMes = new Array(12);
+NomeMes[0] = "janeiro";
+NomeMes[1] = "fevereiro";
+NomeMes[2] = "março";
+NomeMes[3] = "abril";
+NomeMes[4] = "maio";
+NomeMes[5] = "junho";
+NomeMes[6] = "julho";
+NomeMes[7] = "agosto";
+NomeMes[8] = "setembro";
+NomeMes[9] = "outubro";
+NomeMes[10] = "novembro";
+NomeMes[11] = "dezembro";
+ano = hoje.getYear();
+if (ano < 2007){
+ano = 1900 + ano
+};
+document.write ("<b><font size='2'> " + NomeDia[dia] + ", " + dias + " de " + NomeMes[mes] + " de " + ano + " - SEJA BEM-VINDO!!!</b></font>");
+</script>
